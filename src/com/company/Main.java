@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, SQLException {
         List<Country> countryList = getCountryDetails("Показатель счастья по странам 2015.csv");
-        //addDataToDb(countryList);
+        addDataToDb(countryList);
         Task1();
         Task2();
         Task3();
@@ -28,7 +28,7 @@ public class Main {
         chart.setVisible(true);
     }
 
-    public static void Task2() throws SQLException {
+    public static void Task2() {
         try {
             String url = "jdbc:sqlite:C:/Users/anvar/Desktop/SQLite/mydatabase.db";
             Connection connection = DriverManager.getConnection(url);
