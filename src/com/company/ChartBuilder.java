@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.CategoryLabelPositions;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
@@ -26,18 +27,19 @@ public class ChartBuilder extends ApplicationFrame {
                 PlotOrientation.VERTICAL, false, false, false);
 
         ChartPanel chartPanel = new ChartPanel(barChart);
-        chartPanel.setPreferredSize(new java.awt.Dimension(1200, 700));
+        chartPanel.setPreferredSize(new java.awt.Dimension(1350, 800));
         setContentPane(chartPanel);
 
         CategoryPlot plot = (CategoryPlot) barChart.getPlot();
         plot.getDomainAxis().setCategoryLabelPositions(CategoryLabelPositions.UP_90);
-        plot.setDomainGridlinesVisible(false);
-        plot.setRangeGridlinesVisible(true);
 
         BarRenderer renderer = (BarRenderer) barChart.getCategoryPlot().getRenderer();
         renderer.setSeriesPaint(0, Color.blue);
 
-
+        CategoryPlot plot1 = barChart.getCategoryPlot();
+        CategoryAxis axis = plot.getDomainAxis();
+        Font font = new Font("Dialog", Font.PLAIN, 6);
+        axis.setTickLabelFont(font);
     }
 
     private DefaultCategoryDataset createDataset() throws SQLException {

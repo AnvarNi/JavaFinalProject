@@ -22,7 +22,7 @@ public class Main {
     }
 
     public static void Task1() throws SQLException {
-        ChartBuilder chart = new ChartBuilder("Histogram", "Economy");
+        ChartBuilder chart = new ChartBuilder("Гистограмма", "Экономика стран");
         chart.pack();
         RefineryUtilities.centerFrameOnScreen(chart);
         chart.setVisible(true);
@@ -54,7 +54,7 @@ public class Main {
             var medianSE = statement.executeQuery("SELECT median(StandardError) FROM Countries WHERE (Region = 'Western Europe' OR  Region = 'North America')");
             var numMedianSE = medianSE.getFloat(1);
             var countryWithMedianSE = statement.executeQuery("SELECT Country FROM Countries WHERE StandardError ='" + numMedianSE + "'");
-            System.out.println("Страна с самым средним показателем: " + countryWithMedianSE.getString(1));
+            System.out.println("Страна с самыми средними показателями среди Western Europe и North America: " + countryWithMedianSE.getString(1));
 
             statement.close();
         } catch (SQLException e) {
