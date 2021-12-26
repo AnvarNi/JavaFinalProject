@@ -11,7 +11,7 @@
     <li>Построение графика в методе Task1</li>
     <li>Извлечение данных из бд для заданий 2 и 3 в методах Task2 и Task3</li>
   </ol>
-<h3>Полученный график по показателю экономики стран для задания 1</h3>
+<h3>Полученный график для задания 1</h3>
 <img src = "https://github.com/AnvarNi/JavaFinalProject/blob/master/histogram.png">
 <h3>Полученные данные для заданий 2 и 3</h3>
 <img src = "https://github.com/AnvarNi/JavaFinalProject/blob/master/results.png">
